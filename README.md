@@ -1,2 +1,5 @@
-# bioSite
-HTML &amp; CSS Practice CSD-340
+<h1>CSD 340 Web Development with HTML and CSS</h1>
+<h2>Contributors</h2>
+
+* Toni Farley (Instructor)
+* Brennan Cheatwood
