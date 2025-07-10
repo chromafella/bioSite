@@ -1,6 +1,6 @@
 /* --- Style Guide / Pattern Library --- */
 
-/* Fonts */
+/* Font (Helvetica on macOS, Arial on Win) */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.6;
@@ -10,7 +10,7 @@ body {
   padding: 0;
 }
 
-/* Color Palette (Hope's New Color Scheme) */
+/* Hope's Color Palette */
 :root {
   --primary-color: #85629B;   /* Dusty Purple */
   --accent-color: #DB5C39;    /* Coral Orange */
@@ -30,7 +30,7 @@ body {
 }
 
 
-/* --- Buttons --- */
+/* --- Buttons (Experimental) --- */
 
 .button {
   background-color: var(--accent-color);
@@ -43,6 +43,12 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button-container {
+  background-color: #222222;
+  text-align: center;
+  padding: 50px;
 }
 
 .button:hover {
@@ -66,14 +72,17 @@ body {
   animation: pulse 1.8s infinite;
 }
 
+/* --- Very Experimental --- */
 @keyframes pulse {
   0% { box-shadow: 0 0 10px var(--alert-color), 0 0 40px var(--alert-color); }
   50% { box-shadow: 0 0 20px var(--alert-color), 0 0 60px var(--alert-color); }
   100% { box-shadow: 0 0 10px var(--alert-color), 0 0 40px var(--alert-color); }
 }
 
+.gallery h2 {
+  color: white;
+}
 
-/* --- Nav Link Hover Effect --- */
 nav ul li a:hover {
   text-decoration: underline;
   color: var(--secondary-color);
@@ -111,14 +120,16 @@ nav ul li a {
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  background-color: var(--background-light);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
   padding: 20px;
+  border-radius: 20px;
 }
 
 .image-grid img {
-  width: 500px;
-  height: 600px;
+  width: 400px;
+  height: 500px;
   object-fit: cover;
   border-radius: 8px;
   object-fit: cover;
@@ -130,6 +141,7 @@ footer {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
+  position: bottom;
 }
 
 .about img {
