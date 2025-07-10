@@ -1,28 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hope Babka</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
+<script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
 <body>
 
   <!-- Alert banner -->
   <div class="alert-banner">
-    WORK IN PROGRESS — PLEASE DO NOT GRADE YET
+    🚧 WORK IN PROGRESS | Last Updated 7/9/25
   </div>
 
   <!-- Header -->
   <header>
-    <h1>Hope Babka</h1>
-    <nav>
-      <ul>
+  <div class="header-content">
+    <h1 class="site-title">Hope Babka</h1>
+    <nav class="navbar">
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="hobbies.html">Hobbies</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+
+  <!-- Ducks remain inside header -->
+  <div class="duck-container">
+    <span class="duck">🦆</span>
+    <span class="duck">🦆</span>
+    <span class="duck">🦆</span>
+    <span class="duck">🦆</span>
+    <span class="duck">🦆</span>
+  </div>
+</header>
+
 
   <!-- Hero Section -->
   <section class="hero">
@@ -30,26 +53,26 @@
     <p>A creative soul with a passion for art, beauty, and the outdoors.</p>
   </section>
 
-  <!-- Intro Section -->
+  <!-- Intro Card Section -->
   <section class="card-section">
     <h2>Welcome to Hope's Story</h2>
     <p>Born and raised in Sevier County, Hope Babka is a licensed esthetician, artist, and nature-lover. This site shares her story, her goals, and what inspires her to keep creating and caring for others.</p>
   </section>
 
-  <!-- Image Gallery Section -->
-  <section class="gallery" style="background-color: #222222;">
+  <!-- Gallery Section -->
+  <section class="gallery" style="background-color: var(--dark-color);">
     <h2>Highlights & Accomplishments</h2>
     <div class="image-grid">
       <figure>
-        <img src="images/hopelicense.png" alt="Hope graduating from esthetics school">
+        <img src="images/hopelicense.png" alt="Hope graduating from esthetics school" />
         <figcaption>Graduated from Douglas J Aveda Institute with her esthetics license.</figcaption>
       </figure>
       <figure>
-        <img src="images/IMG_2984.JPEG" alt="Hope working at Target Ulta Beauty">
+        <img src="images/IMG_2984.JPEG" alt="Hope working at Target Ulta Beauty" />
         <figcaption>Working in the Ulta Beauty department at Target, helping people feel confident.</figcaption>
       </figure>
       <figure>
-        <img src="images/hopebanff.JPEG" alt="Hope exploring Banff National Park">
+        <img src="images/hopebanff.JPEG" alt="Hope exploring Banff National Park" />
         <figcaption>Exploring the outdoors and finding peace in nature.</figcaption>
       </figure>
     </div>
@@ -64,7 +87,7 @@
   <!-- Footer -->
   <footer>
     <p>Inspired by Hope's journey in beauty and art. Learn more about <a href="https://avedafi.edu/about-aveda" target="_blank" rel="noopener noreferrer">Douglas J Aveda Institute</a>.</p>
-    <p>Copyright 2025 | Brennan Cheatwood</p>
+    <p>&copy; 2025 Brennan Cheatwood</p>
   </footer>
 
 </body>
