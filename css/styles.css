@@ -12,12 +12,12 @@ body {
 
 /* Hope's Color Palette */
 :root {
-  --primary-color: #85629B;   /* Dusty Purple */
-  --accent-color: #DB5C39;    /* Coral Orange */
-  --secondary-color: #DE45D1; /* Electric Pink */
-  --cta-color: #DB6F00;       /* Golden Orange */
-  --background-light: #DBC4B2;/* Soft Cream */
-  --alert-color: #DB2616;     /* Bold Red */
+  --primary-color: #85629B;
+  --accent-color: #DB5C39;
+  --secondary-color: #DE45D1;
+  --cta-color: #DB6F00;
+  --background-light: #DBC4B2;
+  --alert-color: #DB2616;
   --light-color: #ffffff;
   --dark-color: #222222;
 }
@@ -29,9 +29,7 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-
-/* --- Buttons (Experimental) --- */
-
+/* --- Buttons --- */
 .button {
   background-color: var(--accent-color);
   color: var(--light-color);
@@ -72,7 +70,13 @@ body {
   animation: pulse 1.8s infinite;
 }
 
-/* --- Very Experimental --- */
+.button:focus,
+.nav-links li a:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* --- Animations --- */
 @keyframes pulse {
   0% { box-shadow: 0 0 10px var(--alert-color), 0 0 40px var(--alert-color); }
   50% { box-shadow: 0 0 20px var(--alert-color), 0 0 60px var(--alert-color); }
@@ -80,27 +84,47 @@ body {
 }
 
 @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
+/* --- Header --- */
 header {
   background: linear-gradient(-45deg, #85629B, #DE45D1, #DB5C39, #DB6F00);
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
   color: var(--light-color);
-  padding: 20px;
+  padding: 60px 20px;
   text-align: center;
   border: 3px solid black;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
+header h1, nav {
+  position: relative;
+  z-index: 2;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--light-color);
+}
+
+/* Duck Animation */
 .duck-container {
   position: absolute;
   width: 100%;
@@ -120,70 +144,38 @@ header {
   color: yellow;
 }
 
-.duck:nth-child(1) {
-  left: 10%;
-  animation-duration: 12s;
-  font-size: 2.5rem;
-}
-.duck:nth-child(2) {
-  left: 25%;
-  animation-duration: 14s;
-  font-size: 2rem;
-}
-.duck:nth-child(3) {
-  left: 50%;
-  animation-duration: 10s;
-  font-size: 3rem;
-}
-.duck:nth-child(4) {
-  left: 70%;
-  animation-duration: 11s;
-  font-size: 2.8rem;
-}
-.duck:nth-child(5) {
-  left: 85%;
-  animation-duration: 13s;
-  font-size: 2.2rem;
-}
+.duck:nth-child(1) { left: 10%; animation-duration: 12s; font-size: 2.5rem; }
+.duck:nth-child(2) { left: 25%; animation-duration: 14s; font-size: 2rem; }
+.duck:nth-child(3) { left: 50%; animation-duration: 10s; font-size: 3rem; }
+.duck:nth-child(4) { left: 70%; animation-duration: 11s; font-size: 2.8rem; }
+.duck:nth-child(5) { left: 85%; animation-duration: 13s; font-size: 2.2rem; }
 
 @keyframes floatDuck {
-  0% {
-    top: 100%;
-    transform: translateY(0) rotate(0deg);
-  }
-  100% {
-    top: -20%;
-    transform: translateY(-100%) rotate(360deg);
-  }
+  0% { top: 100%; transform: translateY(0) rotate(0deg); }
+  100% { top: -20%; transform: translateY(-100%) rotate(360deg); }
 }
 
-/* Header layout */
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
+/* Navigation */
+.navbar { position: relative; }
 
-.site-title {
-  font-size: 1.8rem;
-  margin: 0;
-  color: var(--light-color);
-}
-
-/* Nav Styles */
-.navbar {
-  position: relative;
-}
-
-/* Hamburger nav styles */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+  font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
 }
 
 .menu-toggle {
@@ -195,69 +187,7 @@ header {
   cursor: pointer;
 }
 
-/* Mobile behavior */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--primary-color);
-    padding: 20px;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .navbar {
-    position: relative;
-  }
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 0;
-  display: block;
-  font-size: 1.2rem;
-}
-
-
-
-.gallery h2 {
-  color: white;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-  color: var(--secondary-color);
-  transition: color 0.3s ease;
-}
-
-header {
-  background-color: var(--primary-color);
-  color: var(--light-color);
-  padding: 60px 20px;
-  text-align: center;
-  border: 3px solid black;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-header h1, nav {
-  position: relative;
-  z-index: 2;
-}
-
-
+/* Nav List Defaults */
 nav ul {
   list-style: none;
   padding: 0;
@@ -273,6 +203,7 @@ nav ul li a {
   text-decoration: none;
 }
 
+/* Hero */
 .hero {
   padding: 40px;
   text-align: center;
@@ -280,6 +211,12 @@ nav ul li a {
   color: var(--dark-color);
 }
 
+/* Gallery */
+.gallery h2 {
+  color: white;
+}
+
+/* Image Grid */
 .image-grid {
   display: grid;
   background-color: var(--background-light);
@@ -294,19 +231,20 @@ nav ul li a {
   height: 500px;
   object-fit: cover;
   border-radius: 8px;
-  object-fit: cover;
 }
 
+/* Footer */
 footer {
   background-color: var(--dark-color);
   color: var(--light-color);
   text-align: center;
   padding: 20px;
   margin-bottom: 10px;
-  position: bottom;
   border: beige solid 5px;
+  /* Removed invalid: position: bottom; */
 }
 
+/* About Page */
 .about img {
   max-width: 250px;
   border-radius: 50%;
@@ -314,6 +252,7 @@ footer {
   margin: 20px auto;
 }
 
+/* Hobbies Section */
 .hobbies h2 {
   color: white;
 }
@@ -327,6 +266,7 @@ footer {
   text-align: center;
 }
 
+/* Buttons (global style) */
 button {
   background-color: var(--secondary-color);
   color: var(--light-color);
@@ -336,6 +276,7 @@ button {
   cursor: pointer;
 }
 
+/* Alert Banner */
 .alert-banner {
   background-color: yellow;
   color: black;
@@ -349,6 +290,7 @@ button {
   border: 3px solid black;
 }
 
+/* Interview Section */
 .interview {
   background-color: var(--background-light);
   padding: 40px;
@@ -376,7 +318,7 @@ button {
   line-height: 1.6;
   font-weight: bold;
   margin-bottom: 15px;
-  margin-top: 15px
+  margin-top: 15px; 
 }
 
 .interview ol li em {
@@ -385,7 +327,7 @@ button {
   margin-top: 5px;
 }
 
-/* Scroll animation */
+/* Scroll Animation */
 .scroll-section,
 .timeline-item {
   opacity: 0;
@@ -399,7 +341,7 @@ button {
   transform: translateY(0);
 }
 
-/* Timeline (vertical scroll slideshow) layout */
+/* Timeline Section */
 .timeline-section {
   background-color: var(--background-light);
   padding: 60px 20px;
@@ -432,8 +374,44 @@ button {
   margin-bottom: 10px;
 }
 
-/* Responsive layout */
+/* Visually Hidden Utility Class */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* --- Media Queries --- */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 20px;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
   .timeline-item {
     flex-direction: column;
     text-align: center;
@@ -447,15 +425,3 @@ button {
     max-width: 100%;
   }
 }
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
