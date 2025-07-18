@@ -7,19 +7,25 @@
 </head>
 <body>
   <div class="alert-banner">
-    WORK IN PROGRESS — LAST UPDATED 7/13/2025
+    ALPHA BUILD - 7/18/25
   </div>
 
-  <header>
-    <h1>Hope's Hobbies</h1>
-    <nav>
-      <ul>
+<header>
+  <div class="header-content">
+    <h1 class="site-title">Hobbies</h1>
+
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="nav-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Hope</a></li>
         <li><a href="hobbies.html">Hobbies</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+
+</header>
+
 
   <section class="hobbies">
     <h2>Hope's Favorite Things To Do</h2>
@@ -57,5 +63,16 @@
   <footer>
     <p>© 2025 Brennan Cheatwood · CSD340</p>
   </footer>
+  <script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggleBtn?.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    toggleBtn.setAttribute('aria-expanded', !expanded);
+  });
+</script>
+
 </body>
 </html>

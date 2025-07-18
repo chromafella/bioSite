@@ -7,33 +7,39 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Alert banner -->
-  <div class="alert-banner">
-    🚧 WORK IN PROGRESS | Last Updated 7/13/25
+<!-- Alert Banner -->
+<div class="alert-banner">
+  ALPHA BUILD - 7/18/25 <a href="https://github.com/chromafella/bioSite">GitHub Repository</a>
+</div>
+
+<!-- Header -->
+<header>
+  <br>
+  <div class="header-content">
+    <h1 class="site-title">Hope Babka</h1>
+
+    <!-- Nav with hamburger -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Hope</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+      </ul>
+    </nav>
   </div>
+  <br>
 
-  <!-- Header -->
-  <header>
-    <div class="header-content">
-      <h1 class="site-title">Hope Babka</h1>
-      <nav class="navbar">
-        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="hobbies.html">Hobbies</a></li>
-        </ul>
-      </nav>
+  <!-- Duck Animation Background -->
+  <div class="duck-container">
+    <span class="duck">🦆</span>
+    <span class="duck">🦆</span>
+    <span class="duck">🦆</span>
+    <span class="duck">🦆</span>
+    <span class="duck">🦆</span>
+  </div>
+</header>
 
-    </div>
-    <div class="duck-container">
-      <span class="duck">🦆</span>
-      <span class="duck">🦆</span>
-      <span class="duck">🦆</span>
-      <span class="duck">🦆</span>
-      <span class="duck">🦆</span>
-    </div>
-  </header>
 
   <!-- Hero Section -->
   <section class="scroll-section hero" style="background-color: #222222; color: white;">
@@ -45,7 +51,7 @@
 
   <!-- Intro Card Section -->
   <section class="scroll-section card-section">
-    <h2>Welcome to Hope's Story</h2>
+    <h1>Welcome to Hope's Story</h1>
     <p>Born and raised in Sevier County, Hope Babka is a licensed esthetician, artist, and nature-lover. This site shares her story, her goals, and what inspires her to keep creating and caring for others.</p>
   </section>
 
@@ -94,12 +100,14 @@
 
   <!-- Scripts -->
   <script>
-    // Hamburger toggle
-    const toggleBtn = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggleBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    toggleBtn.setAttribute('aria-expanded', !expanded);
+  });
 
     // Scroll animation
     const scrollItems = document.querySelectorAll('.scroll-section, .timeline-item');
