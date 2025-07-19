@@ -194,9 +194,6 @@ header {
 }
 
 
-
-
-/* Hero */
 .hero {
   padding: 40px;
   text-align: center;
@@ -204,12 +201,10 @@ header {
   color: var(--dark-color);
 }
 
-/* Gallery */
 .gallery h2 {
   color: white;
 }
 
-/* Image Grid */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -246,7 +241,7 @@ header {
 }
 
 
-/* Footer */
+
 footer {
   background-color: var(--dark-color);
   color: var(--light-color);
@@ -257,7 +252,7 @@ footer {
   /* Removed invalid: position: bottom; */
 }
 
-/* About Page */
+
 .about img {
   max-width: 250px;
   border-radius: 50%;
@@ -265,7 +260,7 @@ footer {
   margin: 20px auto;
 }
 
-/* Hobbies Section */
+
 .hobbies h2 {
   color: white;
 }
@@ -279,7 +274,6 @@ footer {
   text-align: center;
 }
 
-/* Buttons (global style) */
 button {
   background-color: var(--secondary-color);
   color: var(--light-color);
@@ -303,7 +297,6 @@ button {
   border: 3px solid black;
 }
 
-/* Interview Section */
 .interview {
   background-color: var(--background-light);
   padding: 40px;
@@ -354,7 +347,6 @@ button {
   transform: translateY(0);
 }
 
-/* Timeline Section */
 .timeline-section {
   background-color: var(--background-light);
   padding: 60px 20px;
@@ -387,7 +379,6 @@ button {
   margin-bottom: 10px;
 }
 
-/* Visually Hidden Utility Class */
 .visually-hidden {
   position: absolute;
   width: 1px;
