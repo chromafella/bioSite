@@ -101,18 +101,22 @@
   </section>
 </div>
   <footer>
-    <p>&copy; 2025 Brennan Cheatwood | CSD340</p>
+    <p>&copy; 2025 Brennan Cheatwood | All Rights Reserved.</p>
   </footer>
-  <script>
-  const toggleBtn = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  toggleBtn?.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-    toggleBtn.setAttribute('aria-expanded', !expanded);
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (toggleBtn && navLinks) {
+      toggleBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
   });
 </script>
+
 
 </body>
 </html>
