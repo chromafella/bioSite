@@ -355,7 +355,9 @@ button {
 
 .timeline-item {
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
+  text-align: left;
   gap: 30px;
   margin-bottom: 60px;
   max-width: 1000px;
@@ -365,6 +367,9 @@ button {
 
 .timeline-item img {
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   height: auto;
   border-radius: 12px;
   object-fit: cover;
@@ -373,6 +378,7 @@ button {
 
 .timeline-text {
   max-width: 600px;
+  justify-content: space-around;
 }
 
 .timeline-text h3 {
