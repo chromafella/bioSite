@@ -464,3 +464,16 @@ button {
     background-color: #f0f0f0;
   }
 }
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #F5D6B2;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+details {
+  margin-bottom: 15px;
+}
+

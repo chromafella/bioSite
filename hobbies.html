@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="alert-banner">
-    ALPHA BUILD - 7/27/25
+    BETA BUILD - 8/7/25
   </div>
 
 <header>
@@ -34,7 +34,7 @@
 
     <div class="image-grid">
       <figure>
-        <img src="images/hopecatchingfishwithjustline.JPEG" alt="Hope fishing on a lake during her first date">
+        <img src="images/hopecatchingfishwithjustline.JPEG" alt="Hope fishing">
         <figcaption>
           <h3 style="text-align: center;">Fishing</h3>
           Hope’s first date with Brennan was a relaxed afternoon of fishing; something she still remembers fondly. 
@@ -43,7 +43,7 @@
       </figure>
 
       <figure>
-        <img src="images/hopetakingdisppicture.png" alt="Hope taking a film photo with a disposable camera">
+        <img src="images/hopetakingdisppicture.png" alt="Hope taking a photo">
         <figcaption>
           <h3 style="text-align: center;">Taking Pictures</h3>
           Photography, especially film photography, is one of Hope’s creative outlets. She loves the nostalgia and unpredictability of capturing moments on film.
@@ -51,7 +51,7 @@
       </figure>
 
       <figure>
-        <img src="images/hopecastlebanff.JPEG" alt="Hope traveling in the mountains, bundled in a jacket">
+        <img src="images/hopecastlebanff.JPEG" alt="Hope traveling in the mountains">
         <figcaption>
           <h3 style="text-align: center;">Traveling</h3>
           Traveling has become one of Hope's greatest passions. She finds freedom and inspiration in new places, especially in the mountains and nature-rich destinations.
@@ -64,6 +64,7 @@
   <footer>
     <p>&copy; 2025 Brennan Cheatwood | All Rights Reserved.</p>
   </footer>
+  <!-- Updated JS to change icon when pressed-->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const toggleBtn = document.querySelector('.menu-toggle');
@@ -73,10 +74,13 @@
         navLinks.classList.toggle('active');
         const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
         toggleBtn.setAttribute('aria-expanded', !expanded);
+        toggleBtn.setAttribute('aria-label', expanded ? 'Open menu' : 'Close menu');
+        toggleBtn.textContent = expanded ? '☰' : '✕'; // Optional: changes icon
       });
     }
   });
 </script>
+
 
 
 </body>

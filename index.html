@@ -10,7 +10,7 @@
 <body>
 <!-- Alert Banner -->
 <div class="alert-banner">
-  ALPHA BUILD - 7/27/25 <a href="https://github.com/chromafella/bioSite">GitHub Repository</a>
+  BETA BUILD - 8/7/25 <a href="https://github.com/chromafella/bioSite">GitHub Repository</a>
 </div>
 
 <!-- Header -->
@@ -102,6 +102,7 @@
   </footer>
 
   <!-- Scripts -->
+  <!-- Updated JS to change icon when pressed-->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const toggleBtn = document.querySelector('.menu-toggle');
@@ -111,6 +112,8 @@
         navLinks.classList.toggle('active');
         const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
         toggleBtn.setAttribute('aria-expanded', !expanded);
+        toggleBtn.setAttribute('aria-label', expanded ? 'Open menu' : 'Close menu');
+        toggleBtn.textContent = expanded ? '☰' : '✕'; // Optional: changes icon
       });
     }
   });
