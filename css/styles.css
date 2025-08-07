@@ -284,7 +284,7 @@ button {
   cursor: pointer;
 }
 
-/* Alert Banner */
+/* Alert Banner
 .alert-banner {
   background-color: white;
   color: black;
@@ -297,6 +297,7 @@ button {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   border: 3px solid black;
 }
+*/
 
 .interview {
   background-color: var(--background-light);
